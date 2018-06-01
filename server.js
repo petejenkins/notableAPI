@@ -11,10 +11,6 @@ const port = 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//require('./app/routes')(app, {});
-
-//var url = 'mongodb://dbeditor:Password123@ds016098.mlab.com:16098/notable';
-// db.url
 MongoClient.connect(db.url, (err, database) => {
   if (err) return console.log(err)
   require('./app/routes')(app, database);
